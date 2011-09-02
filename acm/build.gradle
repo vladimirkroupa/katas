@@ -1,0 +1,16 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    compile 'org.projectlombok:lombok:0.10.0-RC3'
+  	compile 'com.google.guava:guava:r09'
+	compile 'org.slf4j:slf4j-api:1.6.+'
+  	compile 'ch.qos.logback:logback-core:0.9.29'
+  
+    testCompile 'junit:junit:4.8.+'
+}
