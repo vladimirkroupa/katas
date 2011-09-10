@@ -9,6 +9,11 @@ import org.slf4j.LoggerFactory;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 
+/**
+ * Represents a reading of a segment-baset digit. 
+ * 
+ * @author stoupa
+ */
 public class DigitReading {
 
 	final static Logger logger = LoggerFactory.getLogger(DigitReading.class);
@@ -20,6 +25,18 @@ public class DigitReading {
 		this.litSegments = ImmutableSet.copyOf( litSegments );
 		this.offSegments = ImmutableSet.copyOf( offSegments );
 	}
+	
+	/**
+	 * Creates a digit reading (with all segments known) from a known digit.  
+	 * Primarily for testing purposes.
+	 * 
+	 * @param digit digit to create reading from.
+	 */
+	public DigitReading( Digit digit ) {
+		this.litSegments = digit.getLitSegments();
+		this.offSegments = digit.getOffSegments();
+	}
+	
 
 	public Set<Segment> getLitSegments() {
 		return litSegments;
